@@ -17,7 +17,17 @@ fetch(`https://api.github.com/users/${userName}`,{
 })
 
 .then((data) => {
-    console.log(`O nome do usuário é: ${data.name}, mora em ${data.location} e trabalha na ${data.company}`)    
+    mostrar = (document.querySelector(".resposta").innerHTML = `O nome do usuário é: ${data.name}, mora em ${data.location} e trabalha na ${data.company}`);    
 }).catch((err) => {
-    console.log(`Houve algum erro: ${err}`)    
+    mostrar = (document.querySelector(".resposta").innerHTML = `Houve algum erro: ${err}`);    
 });
+
+function vermelho() {
+    teste = document.getElementById("teste").style.color = "red";
+}
+
+function azul() {
+    teste = document.getElementById("teste").style.color = "blue";
+}
+
+
